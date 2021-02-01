@@ -1,0 +1,20 @@
+<div *ngIf="NoOfStars==1" style="background-color: yellow;color:red;">
+  *
+  <input type="button" (click)="ExecuteNotify(NoOfStars)" value="Click" />
+</div>
+<div *ngIf="NoOfStars==2" style="background-color: yellow;color:red;">
+  **
+  <input type="button" (click)="ExecuteNotify(NoOfStars)" value="Click" />
+</div>
+<div *ngIf="NoOfStars==3" style="background-color: yellow;color:red;">
+  ***
+  <input type="button" (click)="ExecuteNotify(NoOfStars)" value="Click" />
+</div>
+<div *ngIf="NoOfStars==4" style="background-color: yellow;color:red;">
+  ****
+  <input type="button" (click)="ExecuteNotify(NoOfStars)" value="Click" />
+</div>
+<div *ngIf="NoOfStars==5" (click)="ExecuteNotify(NoOfStars)" style="background-color: yellow;color:red;">
+  *****
+  <input type="button" (click)="ExecuteNotify(NoOfStars)" value="Click" />
+</div>

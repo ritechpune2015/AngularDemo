@@ -1,0 +1,66 @@
+<!--<div [ngStyle]="{'background-color':'blue'}">
+  Hello
+</div>
+<div [ngStyle]="{'background-color':flag?'red':'green'}">
+   ng style directive
+</div>
+
+<div [ngClass]="{'box':flag}">
+    ng class directive
+</div>
+<div [ngClass]="{'box1':a==10}">
+   ng class 10 value
+</div>
+<span [hidden]="flag">Hello</span>
+<input type="text" [disabled]="flag" /> <br>
+<button (click)="toggle()">click</button>
+<span *ngIf="flag;then first else second"></span>
+<ng-template #first>
+   <div class="box">
+    This is true part
+   </div>
+</ng-template>
+<ng-template #second>
+  <div class="box1">
+    This is false part.
+  </div>
+</ng-template>
+
+<ul [ngSwitch]="a">
+   <li *ngSwitchCase="1"> First LI tag</li>
+   <li *ngSwitchCase="2">Second LI tag</li>
+   <li *ngSwitchCase="3">Third LI tag</li>
+   <li *ngSwitchCase="4">Fourth LI tag</li>
+   <li *ngSwitchCase="5">Fifth LI tag</li>
+   <li *ngSwitchDefault>By Default</li>
+</ul>
+
+
+Enter Name: <input type="text" #ename>  <br>
+<input type="button" value="Click" (click) ="display(ename)" />
+<br>
+
+One Way : <input type="text" [ngModel]="a" /> <br>
+Two Way:<input type="text" [(ngModel)]="a" /> <br>
+
+<span> Square of a is: {{a*a}}</span> <br>
+<input type="text" [ngModel]="pageTitle" /> <br>
+<input type="button" (click)="func()" value="Click" /> <br>
+<input type="text" (blur)="func()" />
+<h1 bgcolor>{{pageTitle}}</h1>
+<h4 bgcolor> Value of a is:{{a}}</h4>
+<h4>Value of b is:{{b}}</h4>
+<h4>Multification is:{{a*b}}</h4>
+<h4>Addition is:{{a+b}}</h4>
+<h4>Call Say Hello :{{SayHello()}}</h4>
+<h4> Addition : {{10+20}}</h4>
+<span innerText="{{a}}"></span> <br>
+<span [innerText]="a"></span>
+<input type="text" [value]="pageTitle" />
+
+-->
+
+ <div style="background-color:orange;margin:2px;">
+   <h2>Welcome </h2>
+    <p> welcome to angular app this is welcome component</p>
+ </div>

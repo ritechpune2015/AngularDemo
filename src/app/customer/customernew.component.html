@@ -1,0 +1,82 @@
+<h2> New Customer Form </h2>
+<form [formGroup]="custfrm" (ngSubmit)="SaveCustomer()">
+  <div>
+    <label>Customer Name</label>
+    <div>
+      <input type="text" formControlName="CustomerName" />
+      <div class="error" *ngIf="custfrm.controls.CustomerName.invalid && (custfrm.controls.CustomerName.dirty || custfrm.controls.CustomerName.touched)">
+        <span [hidden]="!custfrm.controls['CustomerName'].hasError('required')">Customer Name Required</span>
+        <span [hidden]="!custfrm.controls['CustomerName'].hasError('minlength')">Minimum 5 Characters</span>
+        <span [hidden]="!custfrm.controls['CustomerName'].hasError('maxlength')">Maximum 10 Characters</span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label>Adress</label>
+    <div>
+      <input type="text" formControlName="Address" />
+      <div class="error" *ngIf="custfrm.controls['Address'].invalid && (custfrm.controls['Address'].touched || custfrm.controls['Address'].dirty)">
+        <span [hidden]="!custfrm.controls['Address'].hasError('required')">Address Required</span>
+        <span [hidden]="!custfrm.controls['Address'].hasError('minlength')">Minimum 5 Characters</span>
+        <span [hidden]="!custfrm.controls['Address'].hasError('maxlength')">Maximum 5 Characters</span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label>Email ID</label>
+    <div>
+      <input type="text" formControlName="EmailID" />
+      <div class="error" *ngIf="custfrm.controls['EmailID'].invalid && (custfrm.controls['EmailID'].touched || custfrm.controls['EmailID'].dirty)">
+        <span [hidden]="!custfrm.controls['EmailID'].hasError('required')">EmailID Required</span>
+        <span [hidden]="!custfrm.controls['EmailID'].hasError('email')">Invalid Email ID </span>
+
+      </div>
+    </div>
+  </div>
+  <div>
+    <label>Mobile No</label>
+    <div>
+      <input type="text" formControlName="MobileNo" />
+      <div class="error" *ngIf="custfrm.controls['MobileNo'].invalid && (custfrm.controls['MobileNo'].touched || custfrm.controls['MobileNo'].dirty)">
+        <span [hidden]="!custfrm.controls['MobileNo'].hasError('required')">MobileNo Required</span>
+        <span [hidden]="!custfrm.controls['MobileNo'].hasError('pattern')">10 digits required</span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label>Credit Limit</label>
+    <div>
+      <input type="text" formControlName="CreditLimit" />
+      <div class="error" *ngIf="custfrm.controls['CreditLimit'].invalid && (custfrm.controls['CreditLimit'].touched || custfrm.controls['CreditLimit'].dirty)">
+        <span [hidden]="!custfrm.controls['CreditLimit'].hasError('required')">Address Required</span>
+        <span [hidden]="!custfrm.controls['CreditLimit'].hasError('min')">Minimum 100</span>
+        <span [hidden]="!custfrm.controls['CreditLimit'].hasError('max')">Maximum 1000</span>
+        <span [hidden]="!custfrm.controls['CreditLimit'].hasError('evenCredit')">Credit Limit Should be Even!</span>
+      </div>
+    </div>
+  </div>
+    <!--
+    <div formGroupName="BillingAddress">
+       <div>
+         <label>Area Name:</label>
+         <div>
+           <input type="text" formControlName="AreaName" />
+         </div>
+       </div>
+       <div>
+         <label>City Name</label>
+         <div>
+           <input type="text" formControlName="CityName" />
+         </div>
+       </div>
+       <div>
+         <label>Pin Code</label>
+         <div>
+           <input type="text" formControlName="PinCode" />
+         </div>
+       </div>
+    </div> -->
+    <div>
+    <input type="submit" value="Save" [disabled]="custfrm.invalid " />
+    </div>
+</form>

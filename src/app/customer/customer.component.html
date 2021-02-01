@@ -1,0 +1,20 @@
+<h2>Welcome to Customer </h2>
+<a [routerLink]="['/custnew']">Create New</a>
+<a [routerLink]="['/custnewfb']">Create New FB</a>
+<table border="1">
+  <tr>
+    <td>Customer ID</td>
+    <td>Customer Name</td>
+    <td>Email ID</td>
+    <td>Mobile No</td>
+    <td>Credit Limit</td>
+  </tr>
+  <tr *ngFor="let temp of Custs">
+     <td>{{temp.CustomerID}}</td>
+     <td>{{temp.CustomerName}}</td>
+     <td>{{temp.EmailID}}</td>
+     <td>{{temp.MobileNo}}</td>
+     <td>{{temp.CreditLimit}}</td>
+     <td><a [routerLink]="['/custedit',temp.CustomerID]">Edit</a></td>
+  </tr>
+</table>

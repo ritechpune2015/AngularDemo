@@ -1,0 +1,62 @@
+<h2> Product Form </h2>
+<form #frm="ngForm" (ngSubmit)="SaveProd(frm.value)">
+  <div>
+     <label>Enter Name </label>
+     <div>
+       <input #prdnm="ngModel" type="text" name="ProductName" minlength="5" maxlength="10" required ngModel />
+      <div class="error" *ngIf="prdnm.invalid && (prdnm.touched && prdnm.dirty)">
+          <span [hidden]="!prdnm.errors.required">Product Name Required</span>
+          <span [hidden]="!prdnm.errors.minlength">Minimum 5 Characters</span>
+          <span [hidden]="!prdnm.errors.maxlength">Maximum 10 Characters</span>
+      </div>
+     </div>
+  </div>
+  <div>
+    <label>Enter MfgName</label>
+    <div>
+      <input class="form-control" #mfgname="ngModel" type="text" name="MfgName" required minlength="5" maxlength="10" ngModel/>
+      <div class="error" *ngIf="mfgname.invalid && (mfgname.touched || mfgname.dirty)">
+           <span [hidden]="!mfgname.errors.required">Mfg Name Required</span>
+           <span [hidden]="!mfgname.errors.minlength">Minimum 5 Characters</span>
+           <span [hidden]="!mfgname.errors.maxlength">Maximum 10 Characters</span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label>Enter Price</label>
+    <div>
+      <input class="form-control" type="text" name="Price" ngModel />
+    </div>
+  </div>
+  <!--
+  <div ngModelGroup="ProdProperties">
+     <div>
+       <label>Color</label>
+       <div>
+         <input type="text" name="Color" ngModel />
+       </div>
+     </div>
+     <div>
+       <label>Model No</label>
+       <div>
+         <input type="text" name="ModelNo" ngModel />
+       </div>
+     </div>
+     <div>
+       <label>Size</label>
+       <div>
+          <input type="text" name="Size" ngModel />
+       </div>
+     </div>
+  </div>
+-->
+  <div>
+    <label>Enter Rating</label>
+    <div>
+      <input type="text" name="Rating" ngModel />
+    </div>
+  </div>
+  <div>
+    <input [disabled]="frm.invalid" type="submit" value="Save" />
+  </div>
+</form>

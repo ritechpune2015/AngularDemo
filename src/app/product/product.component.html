@@ -1,0 +1,43 @@
+<h2 *ngIf="titleflag"> List of Products </h2>
+ <a [routerLink]="['/prodnew']">New Product</a>
+<div>
+   <h4> Parameter Values</h4>
+   <table>
+     <tr>
+       <td>Product ID</td>
+       <td>{{prodid}}</td>
+     </tr>
+<tr>
+  <td>Product Name</td>
+  <td>{{prodname}}</td>
+</tr>
+<tr>
+  <td>Price:</td>
+  <td>{{price}}</td>
+</tr>
+   </table>
+</div>
+<h3>{{childmessage}}</h3>
+<input type="button" class="btn btn-danger" value="{{titleflag?'Hide':'Show'}}" (click)="toggle()" />
+<table class="table table-bordered" *ngIf="titleflag">
+  <thead>
+    <tr>
+      <th>Sr. No. </th>
+      <th>Product ID</th>
+      <th>Product Name</th>
+      <th>Mfg Name</th>
+      <th>Price</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+     <tr *ngFor="let temp of prods;let i=index;">
+         <td>{{i+1}}</td>
+         <td>{{temp.ProductID}}</td>
+         <td>{{temp.ProductName}}</td>
+         <td>{{temp.MfgName}}</td>
+         <td>{{temp.Price|multiply:2}}</td>
+         <td><star (notify)="ShowMessage($event)" [NoOfStars]="temp.Rating"></star></td>
+     </tr>
+   </tbody>
+</table>

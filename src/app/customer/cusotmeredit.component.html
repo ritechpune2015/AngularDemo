@@ -1,0 +1,36 @@
+<h2>Edit Customer </h2>
+<form [formGroup]="custfrm" (ngSubmit)="EditCustomer()">
+   <div>
+    <input type="hidden" formControlName="CustomerID" />
+     <label>Customer Name</label>
+     <div>
+       <input type="text" formControlName="CustomerName" />
+     </div>
+   </div>
+
+   <div>
+    <label>Address</label>
+    <div>
+      <input type="text" formControlName="Address" />
+    </div>
+  </div>
+
+  <div>
+    <label>Email ID</label>
+    <div>
+      <input type="text" formControlName="EmailID" />
+    </div>
+  </div>
+
+  <div>
+    <label>Credit Limit</label>
+    <div>
+      <input type="text" formControlName="CreditLimit" />
+    </div>
+  </div>
+
+ <div>
+   <input type="submit" value="Save" />
+ </div>
+
+</form>
